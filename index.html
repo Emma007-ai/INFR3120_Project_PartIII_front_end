@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RecipeCraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <!-- Your existing CSS (copied into frontend/stylesheets/style.css) -->
+  <link rel="stylesheet" href="./stylesheets/style.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+</head>
+
+<body class="page-body">
+
+<!-- =============== NAVBAR (from header.ejs, made static) =============== -->
+<header class="top-shell">
+  <nav class="navbar navbar-expand-lg top-nav">
+    <div class="container-fluid px-4">
+
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="./images/logo.png" class="rc-logo-img me-2" alt="RecipeCraft logo">
+        <span class="rc-brand">RecipeCraft</span>
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="navbar-toggler nav-toggle-btn" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- NAVIGATION -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+
+        <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+          <!-- Always Visible Pages -->
+          <li class="nav-item">
+            <a class="nav-link nav-link-main" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-link-main" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-link-main" href="contact.html">Contact</a>
+          </li>
+
+          <!-- Search Bar -->
+          <li class="nav-item search-wrapper">
+            <form class="nav-search-form d-flex" method="GET" action="/">
+              <input
+                id="navSearch"
+                class="form-control form-control-sm nav-search"
+                type="text"
+                name="q"
+                placeholder="Search recipes..."
+                autocomplete="off">
+            </form>
+
+            <div id="searchSuggestions" class="search-suggestions"></div>
+          </li>
+
+          <!-- Auth (static frontend: always show Login/Register) -->
+          <li class="nav-item">
+            <a class="nav-link nav-link-main" href="https://infr3120-project-parti.onrender.com/login">
+              <i class="fa fa-right-to-bracket me-1"></i>Login
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-link-main" href="https://BACKEND_URL.onrender.com/register">
+              <i class="fa fa-user-plus me-1"></i>Register
+            </a>
+          </li>
+
+          <!-- Avatar Placeholder -->
+          <li class="nav-item">
+            <a class="nav-avatar" href="#"></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="main-shell">
+
+  <!-- ========================= HERO SECTION ========================= -->
+  <section class="hero-card">
+    <div class="row align-items-center gx-4 gy-4">
+      <div class="col-lg-6">
+        <p class="hero-kicker mb-1">Adventure of</p>
+
+        <h1 class="hero-title mb-3">
+          Delicacies with <span class="hero-highlight">RecipeCraft</span>
+        </h1>
+
+        <p class="hero-sub mb-4">
+          Store your meals with ingredients, steps, duration, equipment,
+          notes, and optional images — all in one simple dashboard.
+        </p>
+
+        <a href="https://BACKEND_URL.onrender.com/create"
+           class="btn btn-dark hero-btn-main">Add Recipe</a>
+      </div>
+
+      <div class="col-lg-6 d-flex justify-content-center">
+        <div class="hero-image-circle">
+          <img src="./images/logo.png" class="hero-logo-img" alt="RecipeCraft">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= FEATURE CARDS ========================= -->
+  <section class="info-strip mt-4">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="info-card h-100">
+          <h6>User-Centered</h6>
+          <p>Your feedback shapes RecipeCraft so saving and updating
+             your recipes feels simple and smooth.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-card h-100">
+          <h6>Diverse Recipes</h6>
+          <p>Store any style of dish with clear instructions and notes
+             for easy cooking.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-card h-100">
+          <h6>Fun Community</h6>
+          <p>Perfect for campus cooking clubs and partners to make sharing
+             and organizing recipes easier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= RECIPE TABLE ========================= -->
+  <section class="recipes-shell mt-5">
+    <div class="recipes-card">
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h6 mb-0">Your Recipes</h2>
+        <a href="https://infr3120-project-parti.onrender.com/create"
+           class="btn btn-sm btn-primary">+ Add Recipe</a>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-borderless align-middle">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Duration</th>
+              <th>Notes</th>
+              <th style="width: 180px;">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="recipes-body">
+            <tr>
+              <td colspan="4" class="text-center text-muted py-4">
+                Loading recipes from backend...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER (from footer.ejs, static) ===================== -->
+<footer class="site-footer py-4 mt-5"
+        style="background:#f7f9fc; border-top:1px solid #e5e7eb;">
+  <div class="container text-center">
+
+    <!-- Logo -->
+    <div class="mb-3">
+      <img src="./images/logo.png" alt="RecipeCraft Logo" style="height:55px;">
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-icons mb-3">
+      <a href="mailto:recipecraft@email.com"
+         class="mx-2 text-dark" title="Email">
+        <i class="fa-solid fa-envelope fa-xl"></i>
+      </a>
+
+      <a href="https://instagram.com"
+         target="_blank" class="mx-2 text-dark" title="Instagram">
+        <i class="fa-brands fa-instagram fa-xl"></i>
+      </a>
+
+      <a href="https://linkedin.com"
+         target="_blank" class="mx-2 text-dark" title="LinkedIn">
+        <i class="fa-brands fa-linkedin fa-xl"></i>
+      </a>
+
+      <a href="https://twitter.com"
+         target="_blank" class="mx-2 text-dark" title="Twitter / X">
+        <i class="fa-brands fa-x-twitter fa-xl"></i>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-muted small mb-0">
+      © <span id="year"></span> RecipeCraft — All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Load recipes from backend API + expose for search suggestions -->
+<script>
+  const backendBase = "https://BACKEND_URL.onrender.com";
+
+  async function loadRecipesFromApi() {
+    const tbody = document.getElementById('recipes-body');
+    if (!tbody) return;
+
+    tbody.innerHTML =
+      '<tr><td colspan="4" class="text-center text-muted py-4">Loading recipes from backend...</td></tr>';
+
+    try {
+      const res = await fetch(backendBase + '/api/recipes', { credentials: 'include' });
+      if (!res.ok) throw new Error('Status ' + res.status);
+      const data = (await res.json()) || [];
+
+      // For main.js search suggestions
+      window.recipeSuggestions = data;
+
+      if (!data.length) {
+        tbody.innerHTML =
+          '<tr><td colspan="4" class="text-center text-muted py-4">No recipes yet. Log in on the backend and add one.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = data.map(r => `
+        <tr>
+          <td><strong>${r.name || ""}</strong></td>
+          <td>${r.time || r.duration || "-"}</td>
+          <td>${r.notes || r.description || "-"}</td>
+          <td class="actions-cell">
+            <a href="${backendBase}/view/${r.id}" class="btn btn-sm btn-outline-info me-1">View</a>
+            <a href="${backendBase}/edit/${r.id}" class="btn btn-sm btn-outline-warning me-1">Edit</a>
+          </td>
+        </tr>
+      `).join("");
+    } catch (err) {
+      console.error(err);
+      tbody.innerHTML =
+        '<tr><td colspan="4" class="text-center text-danger py-4">Failed to load recipes from backend API.</td></tr>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('year').textContent = new Date().getFullYear();
+    loadRecipesFromApi();
+  });
+</script>
+
+<!-- Your existing JS (copied into frontend/javascripts/main.js) -->
+<script src="./javascripts/main.js"></script>
+
+</body>
+</html>
