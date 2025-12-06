@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+<<<<<<< HEAD
   <title>RecipeCraft</title>
+=======
+  <title>Contact • RecipeCraft</title>
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap -->
@@ -10,42 +14,69 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet">
 
+<<<<<<< HEAD
   <!-- Your existing CSS (copied into frontend/stylesheets/style.css) -->
+=======
+  <!-- Your CSS -->
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
   <link rel="stylesheet" href="./stylesheets/style.css">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet"
+<<<<<<< HEAD
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous"
         referrerpolicy="no-referrer" />
+=======
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
 </head>
 
 <body class="page-body">
 
+<<<<<<< HEAD
 <!-- =============== NAVBAR (from header.ejs, made static) =============== -->
+=======
+<!-- =============== FULL NAVBAR (UNCHANGED) =============== -->
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
 <header class="top-shell">
   <nav class="navbar navbar-expand-lg top-nav">
     <div class="container-fluid px-4">
 
       <!-- Brand -->
+<<<<<<< HEAD
       <a class="navbar-brand d-flex align-items-center" href="/">
+=======
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
         <img src="assets/images/logo.png" class="rc-logo-img me-2" alt="RecipeCraft logo">
         <span class="rc-brand">RecipeCraft</span>
       </a>
 
+<<<<<<< HEAD
       <!-- Mobile Menu Toggle -->
       <button class="navbar-toggler nav-toggle-btn" type="button"
               data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+=======
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler nav-toggle-btn" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav">
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- NAVIGATION -->
       <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+<<<<<<< HEAD
 
         <ul class="navbar-nav align-items-lg-center gap-lg-3">
 
           <!-- Always Visible Pages -->
+=======
+        <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
           <li class="nav-item">
             <a class="nav-link nav-link-main" href="index.html">Home</a>
           </li>
@@ -55,16 +86,26 @@
           </li>
 
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link nav-link-main" href="contact.html">Contact</a>
           </li>
 
           <!-- Search Bar -->
           <li class="nav-item search-wrapper">
             <form class="nav-search-form d-flex" method="GET" action="/">
+=======
+            <a class="nav-link nav-link-main active" href="contact.html">Contact</a>
+          </li>
+
+          <!-- Search -->
+          <li class="nav-item search-wrapper">
+            <form class="nav-search-form d-flex">
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
               <input
                 id="navSearch"
                 class="form-control form-control-sm nav-search"
                 type="text"
+<<<<<<< HEAD
                 name="q"
                 placeholder="Search recipes..."
                 autocomplete="off">
@@ -74,6 +115,15 @@
           </li>
 
           <!-- Auth (static frontend: always show Login/Register) -->
+=======
+                placeholder="Search recipes..."
+                autocomplete="off">
+            </form>
+            <div id="searchSuggestions" class="search-suggestions"></div>
+          </li>
+
+          <!-- Login / Register -->
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
           <li class="nav-item">
             <a class="nav-link nav-link-main" href="https://infr3120-project-partiii.onrender.com/login">
               <i class="fa fa-right-to-bracket me-1"></i>Login
@@ -86,7 +136,11 @@
             </a>
           </li>
 
+<<<<<<< HEAD
           <!-- Avatar Placeholder -->
+=======
+          <!-- Avatar -->
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
           <li class="nav-item">
             <a class="nav-avatar" href="#"></a>
           </li>
@@ -99,6 +153,7 @@
 
 <main class="main-shell">
 
+<<<<<<< HEAD
   <!-- ========================= HERO SECTION ========================= -->
   <section class="hero-card">
     <div class="row align-items-center gx-4 gy-4">
@@ -185,11 +240,85 @@
           </tbody>
         </table>
       </div>
+=======
+  <!-- Hero -->
+  <section class="hero-card mb-4">
+    <h1 class="mb-3">Contact RecipeCraft</h1>
+    <p class="hero-sub mb-1">
+     Have feedback, questions, or ideas for new features? Use the form below to get in touch with the RecipeCraft team.
+    </p>
+    <p class="hero-sub mb-0">
+      We review every message and do our best to respond or use your input to improve the experience.
+    </p>
+  </section>
+
+  <!-- Form Section -->
+  <section class="recipes-shell mt-3">
+    <div class="form-shell">
+
+      <!-- Success Message -->
+      <div id="contactAlert" style="display:none;"></div>
+
+      <!-- FRONTEND-ONLY FORM -->
+      <form class="row g-3 needs-validation" id="contactForm" novalidate>
+
+        <div class="col-md-6">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" required>
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" required>
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Reason for Contact</label>
+          <select class="form-select" id="reason" required>
+            <option value="" disabled selected>Select...</option>
+            <option value="feedback">Feedback</option>
+            <option value="bug">Bug Report</option>
+            <option value="feature">Feature Request</option>
+            <option value="support">Support</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="invalid-feedback">Please select a reason.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Subject</label>
+          <input type="text" class="form-control" id="subject" required>
+          <div class="invalid-feedback">Please enter a subject.</div>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="5" required></textarea>
+          <div class="invalid-feedback">Please enter a message.</div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="consent" required>
+            <label class="form-check-label">I agree to submit this information.</label>
+            <div class="invalid-feedback">You must agree before submitting.</div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary hero-btn-main" type="submit">Send Message</button>
+        </div>
+
+      </form>
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
     </div>
   </section>
 
 </main>
 
+<<<<<<< HEAD
 <!-- ===================== FOOTER (from footer.ejs, static) ===================== -->
 <footer class="site-footer py-4 mt-5"
         style="background:#f7f9fc; border-top:1px solid #e5e7eb;">
@@ -288,3 +417,46 @@
 
 </body>
 </html>
+=======
+<footer class="site-footer py-4 mt-5"
+        style="background:#f7f9fc; border-top:1px solid #e5e7eb;">
+  <div class="container text-center">
+    <div class="mb-3">
+      <img src="assets/images/logo.png" style="height:55px;">
+    </div>
+    <p class="text-muted small mb-0">
+      © <span id="year"></span> RecipeCraft — All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const form = document.getElementById('contactForm');
+  const alertBox = document.getElementById('contactAlert');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+      return;
+    }
+
+    // Show message
+    alertBox.className = "alert alert-success py-2 mb-4";
+    alertBox.textContent = "Your form has been submitted.";
+    alertBox.style.display = "block";
+
+    form.reset();
+    form.classList.remove('was-validated');
+  });
+</script>
+
+</body>
+</html>
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392

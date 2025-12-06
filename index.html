@@ -29,7 +29,11 @@
 
       <!-- Brand -->
       <a class="navbar-brand d-flex align-items-center" href="/">
+<<<<<<< HEAD
         <img src="./images/logo.png" class="rc-logo-img me-2" alt="RecipeCraft logo">
+=======
+        <img src="assets/images/logo.png" class="rc-logo-img me-2" alt="RecipeCraft logo">
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
         <span class="rc-brand">RecipeCraft</span>
       </a>
 
@@ -75,13 +79,21 @@
 
           <!-- Auth (static frontend: always show Login/Register) -->
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link nav-link-main" href="https://infr3120-project-parti.onrender.com/login">
+=======
+            <a class="nav-link nav-link-main" href="https://infr3120-project-partiii.onrender.com/login">
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
               <i class="fa fa-right-to-bracket me-1"></i>Login
             </a>
           </li>
 
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link nav-link-main" href="https://BACKEND_URL.onrender.com/register">
+=======
+            <a class="nav-link nav-link-main" href="https://infr3120-project-partiii.onrender.com/register">
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
               <i class="fa fa-user-plus me-1"></i>Register
             </a>
           </li>
@@ -114,7 +126,11 @@
           notes, and optional images — all in one simple dashboard.
         </p>
 
+<<<<<<< HEAD
         <a href="https://BACKEND_URL.onrender.com/create"
+=======
+        <a href="https://infr3120-project-partiii.onrender.com/create"
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
            class="btn btn-dark hero-btn-main">Add Recipe</a>
       </div>
 
@@ -161,7 +177,11 @@
 
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="h6 mb-0">Your Recipes</h2>
+<<<<<<< HEAD
         <a href="https://infr3120-project-parti.onrender.com/create"
+=======
+        <a href="https://infr3120-project-partiii.onrender.com/create"
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
            class="btn btn-sm btn-primary">+ Add Recipe</a>
       </div>
 
@@ -197,7 +217,11 @@
 
     <!-- Logo -->
     <div class="mb-3">
+<<<<<<< HEAD
       <img src="./images/logo.png" alt="RecipeCraft Logo" style="height:55px;">
+=======
+      <img src="assets/images/logo.png" alt="RecipeCraft Logo" style="height:55px;">
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
     </div>
 
     <!-- Social Icons -->
@@ -236,7 +260,11 @@
 
 <!-- Load recipes from backend API + expose for search suggestions -->
 <script>
+<<<<<<< HEAD
   const backendBase = "https://BACKEND_URL.onrender.com";
+=======
+  const backendBase = "https://infr3120-project-partiii.onrender.com"; // replace with your backend URL
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
 
   async function loadRecipesFromApi() {
     const tbody = document.getElementById('recipes-body');
@@ -255,7 +283,11 @@
 
       if (!data.length) {
         tbody.innerHTML =
+<<<<<<< HEAD
           '<tr><td colspan="4" class="text-center text-muted py-4">No recipes yet. Log in on the backend and add one.</td></tr>';
+=======
+          '<tr><td colspan="4" class="text-center text-muted py-4">No recipes yet. Click <strong>Add Recipe</strong> to create one.</td></tr>';
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
         return;
       }
 
@@ -273,7 +305,11 @@
     } catch (err) {
       console.error(err);
       tbody.innerHTML =
+<<<<<<< HEAD
         '<tr><td colspan="4" class="text-center text-danger py-4">Failed to load recipes from backend API.</td></tr>';
+=======
+        '<tr><td colspan="4" class="text-center text-muted py-4">No recipes yet. Click <strong>Add Recipe</strong> to create one.</td></tr>';
+>>>>>>> d9372ab0e5719697f7ab4ac1744c5421c925c392
     }
   }
 
