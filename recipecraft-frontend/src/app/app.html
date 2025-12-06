@@ -1,0 +1,115 @@
+<header class="top-shell">
+  <nav class="navbar navbar-expand-lg top-nav">
+    <div class="container-fluid px-4">
+
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" routerLink="/">
+        <img src="https://infr3120-project-partiii.onrender.com/images/logo.png" class="rc-logo-img me-2" alt="RecipeCraft logo">
+        <span class="rc-brand">RecipeCraft</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler nav-toggle-btn" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- NAVIGATION -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+          <li class="nav-item">
+            <a class="nav-link nav-link-main"
+               routerLink="/"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }">
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-link-main"
+               routerLink="/about"
+               routerLinkActive="active">
+              About
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-link-main"
+               routerLink="/contact"
+               routerLinkActive="active">
+              Contact
+            </a>
+          </li>
+
+          <!-- Search (frontend only) -->
+          <li class="nav-item search-wrapper d-none d-lg-block">
+            <form class="nav-search-form d-flex">
+              <input
+                id="navSearch"
+                class="form-control form-control-sm nav-search"
+                type="text"
+                placeholder="Search recipes..."
+                autocomplete="off">
+            </form>
+            <div id="searchSuggestions" class="search-suggestions"></div>
+          </li>
+
+          <!-- Login / Register (backend) -->
+          <li class="nav-item">
+            <a class="nav-link nav-link-main"
+               href="https://infr3120-project-partiii.onrender.com/login">
+              <i class="fa fa-right-to-bracket me-1"></i>Login
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-link-main"
+               href="https://infr3120-project-partiii.onrender.com/register">
+              <i class="fa fa-user-plus me-1"></i>Register
+            </a>
+          </li>
+
+          <!-- Avatar -->
+          <li class="nav-item">
+            <a class="nav-avatar" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="main-shell">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="site-footer py-4 mt-5"
+        style="background:#f7f9fc; border-top:1px solid #e5e7eb;">
+  <div class="container text-center">
+
+    <div class="mb-3">
+      <img src="https://infr3120-project-partiii.onrender.com/images/logo.png" alt="RecipeCraft Logo" style="height:55px;">
+    </div>
+
+    <div class="footer-icons mb-3">
+      <a href="mailto:recipecraft@email.com" class="mx-2 text-dark">
+        <i class="fa-solid fa-envelope fa-xl"></i>
+      </a>
+      <a href="https://instagram.com" class="mx-2 text-dark" target="_blank">
+        <i class="fa-brands fa-instagram fa-xl"></i>
+      </a>
+      <a href="https://linkedin.com" class="mx-2 text-dark" target="_blank">
+        <i class="fa-brands fa-linkedin fa-xl"></i>
+      </a>
+      <a href="https://twitter.com" class="mx-2 text-dark" target="_blank">
+        <i class="fa-brands fa-x-twitter fa-xl"></i>
+      </a>
+    </div>
+
+    <p class="text-muted small mb-0">
+      © 2025 RecipeCraft — All rights reserved.
+    </p>
+  </div>
+</footer>
